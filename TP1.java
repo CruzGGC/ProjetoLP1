@@ -32,6 +32,7 @@ public class TP1 {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Erro!");
+            System.out.println("Ola")
         }
     }
 }
