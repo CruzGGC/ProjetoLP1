@@ -6,4 +6,4 @@ Para ajudar a Comissão Nacional de Eleições a apurar todos os votos e verific
 
 O programa a desenvolver deve ler os dados de cada círculo eleitoral, calcular os resultados e guardar num ficheiro de texto (um por cada círculo) com o nome do círculo e a extensão .txt. Para os resultados nacionais, para alem de aparecer no ecrã, deve ser criado um ficheiro com o nome TotalNacional.txt.
 
-![Tabela Exemplo](https://imgur.com/a/7WOLbRf)
+![Tabela Exemplo](https://i.imgur.com/YzE6Clm.png)
