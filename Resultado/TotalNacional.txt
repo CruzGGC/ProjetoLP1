@@ -1,0 +1,18 @@
+Total de votos: 934234
+Partido: Iniciativa Liberal, Votos: 10, Percentagem: 0.00%
+Partido: Brancos, Votos: 70, Percentagem: 0.01%
+Partido: Nulos, Votos: 176, Percentagem: 0.02%
+Partido: NOVA DIREITA, Votos: 614, Percentagem: 0.07%
+Partido: CDU - Coligação Democrática Unitária, Votos: 164, Percentagem: 0.02%
+Partido: CHEGA, Votos: 463240, Percentagem: 49.59%
+Partido: Ergue-te, Votos: 244104, Percentagem: 26.13%
+Partido: Volt Portugal, Votos: 10, Percentagem: 0.00%
+Partido: Reagir Incluir Reciclar, Votos: 60194, Percentagem: 6.44%
+Partido: ALTERNATIVA DEMOCRÁTICA NACIONAL, Votos: 121868, Percentagem: 13.04%
+Partido: PESSOAS-ANIMAIS-NATUREZA, Votos: 686, Percentagem: 0.07%
+Partido: Bloco de Esquerda, Votos: 28, Percentagem: 0.00%
+Partido: Juntos pelo Povo, Votos: 22, Percentagem: 0.00%
+Partido: Partido Socialista, Votos: 20, Percentagem: 0.00%
+Partido: LIVRE, Votos: 23138, Percentagem: 2.48%
+Partido: ALIANÇA DEMOCRÁTICA, Votos: 2, Percentagem: 0.00%
+Partido: ALTERNATIVA 21, Votos: 19888, Percentagem: 2.13%

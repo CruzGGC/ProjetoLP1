@@ -15,6 +15,7 @@ public class Exemplos {
             oS = new ObjectOutputStream(new FileOutputStream("teste.dat")); // Criação de um objeto do tipo ObjectOutputStream
             oS.writeObject(Distrito); // Criado ficheiro com um objeto do tipo VotosEleitoral (linha 15)
             oS.close(); // Fechar o ObjectOutputStream
+            os.close();
 
             // Ler um ficheiro de objetos e ler um objeto do tipo VotosEleitoral do ficheiro lido e fazer cast para o tipo de objeto correto e imprimir o nome do círculo eleitoral do objeto lido
 
