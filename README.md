@@ -40,4 +40,8 @@ A classe java.util.Map é usada para armazenar e manipular conjuntos de dados na
 
 [Classe Map]
 
+[Print Formatting]
+
 [Classe Map]: https://docs.oracle.com/javase/8/docs/api/java/util/Map.html
+
+[Print Formatting]:https://www.baeldung.com/java-printstream-printf
