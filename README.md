@@ -38,6 +38,6 @@ A classe java.util.Map é usada para armazenar e manipular conjuntos de dados na
 
 # Referencias
 
-[^1]: [Classe Map]
+[Classe Map]
 
 [Classe Map]: https://docs.oracle.com/javase/8/docs/api/java/util/Map.html
