@@ -6,19 +6,11 @@ public class TP1 {
     public static void main(String[] args) {
         VotosCirculoEleitoral Distrito = new VotosCirculoEleitoral("Aveiro");
         try {
-            /*
-             * FileOutputStream os = new FileOutputStream("teste.dat");
-             * 
-             * ObjectOutputStream oS;
-             * oS = new ObjectOutputStream(new FileOutputStream("teste.dat"));
-             * oS.writeObject(Distrito); // Criado ficheiro com um objeto do tipo
-             * VotosEleitoral (linha 15)
-             */
             ObjectInputStream iS;
             iS = new ObjectInputStream(new FileInputStream("Distritos/circulo_coimbra.dat"));
             VotosCirculoEleitoral leitura = (VotosCirculoEleitoral) iS.readObject();
-            System.out.println(leitura.getNomeCirculo()); // Ler o objeto do ficheiro e fazer cast para o tipo de objeto
-                                                          // correto
+            System.out.println(leitura.getNomeCirculo());
+            
             for (String conselho : leitura.getVotosPorConcelho().keySet()) {
                 System.out.println(conselho);
             }
