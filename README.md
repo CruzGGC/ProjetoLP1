@@ -20,7 +20,7 @@ O programa também mantém um total de votos para cada partido em todos os círc
 
 Finalmente, o programa imprime o total de votos de cada partido em todos os círculos eleitorais e grava esses resultados no arquivo "Resultado/TotalNacional.txt". Ele calcula a porcentagem de votos que cada partido recebeu e imprime essa informação tanto na saída padrão quanto no arquivo "Resultado/TotalNacional.txt".
 
-## Explicação das classes
+# Explicação das classes
 
 A classe java.util.Map é usada para armazenar e manipular conjuntos de dados na forma de pares chave-valor.
 
