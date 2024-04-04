@@ -35,3 +35,9 @@ A classe java.util.Map é usada para armazenar e manipular conjuntos de dados na
 > `values()`: Usado para iterar sobre todos os valores em um mapa. Cada valor representa o total de votos de um partido. `totalVotos.values()` retorna uma coleção de todos os valores (ou seja, totais de votos) no mapa `totalVotos`
 
 > `entrySet()`: Usado para iterar sobre todos os mapeamentos em um mapa. Cada mapeamento representa um partido e o total de votos que recebeu. `votos.entrySet()` retorna um conjunto de todos os mapeamentos (ou seja, pares partido-votos) no mapa votos.
+
+# Referencias
+
+[^1]: [Classe Map]
+
+[Classe Map]: https://docs.oracle.com/javase/8/docs/api/java/util/Map.html
