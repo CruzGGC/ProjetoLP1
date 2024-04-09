@@ -1,10 +1,6 @@
-package Exemplos;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 
-public class Exemplos {
+public class ExemploBasico {
     public static void main(String[] args) {
         VotosCirculoEleitoral Distrito = new VotosCirculoEleitoral("Aveiro"); // Criação de um objeto do tipo VotosEleitoral
         try {
