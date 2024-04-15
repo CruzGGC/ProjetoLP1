@@ -15,7 +15,8 @@ public class TP1 {
                 try {
                     ObjectInputStream iS = new ObjectInputStream(new FileInputStream(file));
                     VotosCirculoEleitoral leitura = (VotosCirculoEleitoral) iS.readObject();
-
+                    
+                    System.out.println("-------------------------------------------------");
                     System.out.println("Distrito: " + leitura.getNomeCirculo());
 
                     for (String conselho : leitura.getVotosPorConcelho().keySet()) {
@@ -76,12 +77,13 @@ public class TP1 {
                             percentagem);
                 }
             
-            System.out.println("Total nacional no ficheiro TotalNacional.txt");
 
             } catch (Exception e) {
                 System.out.println(e.getMessage());
                 System.out.println("Erro!");
             }
         }
+        System.out.println("--------------------------------------------");
+        System.out.println("Total nacional no ficheiro TotalNacional.txt");
     }
 }
