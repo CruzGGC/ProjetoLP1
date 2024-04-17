@@ -3,7 +3,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.text.DecimalFormat;
 
-public class TP1 {
+public class TP1_printed {
     public static void main(String[] args) {
 
         // Cria um objeto File para o diretório "Distritos"
@@ -26,6 +26,23 @@ public class TP1 {
                     ObjectInputStream iS = new ObjectInputStream(new FileInputStream(file));
                     // Lê o objeto do ficheiro
                     VotosCirculoEleitoral leitura = (VotosCirculoEleitoral) iS.readObject();
+                    
+                     // Imprime informações sobre o distrito
+                    System.out.println("-------------------------------------------------");
+                    System.out.println("Distrito: " + leitura.getNomeCirculo());
+
+                    // Percorre todos os conselhos e imprime informações sobre os votos
+                    for (String conselho : leitura.getVotosPorConcelho().keySet()) {
+
+                        System.out.println("  Concelho: " + conselho);
+                        VotosConcelho votosPorPartido = leitura.getVotosPorConcelho().get(conselho);
+                        // Imprime os partidos e os votos correspondentes de cada conselho
+                        System.out.println("  Partidos do " + conselho);
+                        Map<String, Integer> votos = votosPorPartido.getVotosPorPartido();
+                        for (Map.Entry<String, Integer> entry : votos.entrySet()) {
+                            System.out.println("    Partido: " + entry.getKey() + ", Votos: " + entry.getValue());
+                        }
+                    }
 
                     // Percorre todos os conselhos e atualiza o total de votos
                     for (String conselho : leitura.getVotosPorConcelho().keySet()) {
@@ -128,5 +145,8 @@ public class TP1 {
                 System.out.println("Erro!");
             }
         }
+        // Imprime uma mensagem final indicando que o total nacional foi escrito no ficheiro "TotalNacional.txt"
+        System.out.println("--------------------------------------------");
+        System.out.println("Total nacional no ficheiro TotalNacional.txt");
     }
 }
