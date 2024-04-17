@@ -13,6 +13,9 @@ public class TP1 {
 
         // Cria um mapa para armazenar o total de votos
         Map<String, Integer> totalVotos = new HashMap<>();
+        Map<String, Integer> totalBrancosNulos = new HashMap<>();
+        // Formata os números para duas casas decimais
+        DecimalFormat df = new DecimalFormat("#.##");
 
         // Percorre todos os ficheiros no diretório
         for (File file : listOfFiles) {
@@ -31,6 +34,10 @@ public class TP1 {
                     for (String conselho : leitura.getVotosPorConcelho().keySet()) {
                         VotosConcelho votosPorPartido = leitura.getVotosPorConcelho().get(conselho);
                         Map<String, Integer> votos = votosPorPartido.getVotosPorPartido();
+                        int votosBrancos = votos.getOrDefault("Brancos", 0);
+                        int votosNulos = votos.getOrDefault("Nulos", 0);
+                        totalBrancosNulos.put("Brancos", totalBrancosNulos.getOrDefault("Brancos", 0) + votosBrancos);
+                        totalBrancosNulos.put("Nulos", totalBrancosNulos.getOrDefault("Nulos", 0) + votosNulos);
                         for (Map.Entry<String, Integer> entry : votos.entrySet()) {
                             // Atualiza o total de votos para cada partido
                             totalVotos.put(entry.getKey(), totalVotos.getOrDefault(entry.getKey(), 0) + entry.getValue());
@@ -40,21 +47,24 @@ public class TP1 {
 
                     try (PrintWriter writer = new PrintWriter("Resultado/"+leitura.getNomeCirculo()+".txt", "UTF-8")) {
 
+                        // Calcula o total de votos, votos brancos e votos nulos dentro de cada círculo eleitoral
                         int totalGeralVotos = 0;
                         int votosBrancos = totalVotosCirculo.getOrDefault("Brancos", 0);
                         int votosNulos = totalVotosCirculo.getOrDefault("Nulos", 0);
+                        // Calcula o total de votantes dentro de cada círculo eleitoral
                         for (Integer votos : totalVotosCirculo.values()) {
                             totalGeralVotos += votos;
                         }
                         int totalVotantes = totalGeralVotos + votosBrancos + votosNulos;
-                        DecimalFormat df = new DecimalFormat("#.##");
+                        
                     
-                        // Create a list from the entries of totalVotosCirculo excluding "Brancos" and "Nulos"
+                        // Ordena a lista de votos em ordem decrescente
                         List<Map.Entry<String, Integer>> list = totalVotosCirculo.entrySet().stream()
                             .filter(entry -> !entry.getKey().equals("Brancos") && !entry.getKey().equals("Nulos"))
                             .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                             .collect(Collectors.toList());
                     
+                        // Escreve os resultados no ficheiro "Resultado/NomeCirculo.txt"
                         writer.println("--------------------Total Distrital-------------------");
                         writer.printf("Distrito: %s\n", leitura.getNomeCirculo());
                         writer.printf("Total de votantes: %d\n", totalVotantes);
@@ -85,15 +95,13 @@ public class TP1 {
 
             // Calcula o total geral de votos, votos brancos e votos nulos
             int totalGeralVotos = 0;
-            int votosBrancos = totalVotos.getOrDefault("Brancos", 0);
-            int votosNulos = totalVotos.getOrDefault("Nulos", 0);
+            int votosBrancos = totalBrancosNulos.get("Brancos");
+            int votosNulos = totalBrancosNulos.get("Nulos");
             for (Integer votos : totalVotos.values()) {
                 totalGeralVotos += votos;
             }
             // Calcula o total de votantes
             int totalVotantes = totalGeralVotos + votosBrancos + votosNulos;
-            // Formata os números para duas casas decimais
-            DecimalFormat df = new DecimalFormat("#.##");
 
             // Remove os votos brancos e nulos do total de votos
             totalVotos.remove("Brancos");
